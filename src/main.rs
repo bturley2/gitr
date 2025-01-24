@@ -29,9 +29,10 @@ fn main() {
 
 // identifies commands given by the user, and invokes the appropriate logic
 fn parse_args() {
-    let cmd = std::env::args().nth(1).expect("No command given!").as_str();
+    //let cmd = std::env::args().nth(1).expect("No command given!").as_str();
+    let cmd = String::from("init");
 
-    match Command::new(cmd) {
+    match Command::new(&cmd) {
         Command::Init => cmd_init(),
         Command::Add => cmd_add(),
         Command::Commit => cmd_commit(),
